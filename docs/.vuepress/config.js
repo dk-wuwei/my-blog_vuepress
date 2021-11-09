@@ -112,7 +112,7 @@ module.exports = {
             autoCreateIssue: true, // 可选，这样设置可以在开发环境下不自动创建 Issue
             prefix: '[Comments] ',
             labels: ['comments']
-        },
+        }
     },
     // markdown配置
     markdown: {
