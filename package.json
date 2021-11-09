@@ -1,13 +1,11 @@
 {
     "scripts": {
-        "dev": "vuepress dev docs --no-cache --temp .temp",
+        "dev": "vuepress dev docs --no-cache --temp .temp --port 8088",
         "build": "vuepress build docs --dest dist"
     },
     "dependencies": {
         "vuepress": "^1.8.2",
         "vuepress-theme-meteorlxy": "^1.9.0"
     },
-    "devDependencies": {
-        "vuepress-plugin-good-copycode": "^1.0.4"
-    }
+    "devDependencies": {}
 }

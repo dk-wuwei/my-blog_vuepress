@@ -6,12 +6,37 @@ module.exports = {
             lang: 'zh-CN',
         },
     },
+    // plugins: [
+    //     ['@vuepress-plugin-code-copy',
+    //         {
+    //             selector: 'div[class*="language-"] pre',
+    //             align: 'bottom', //对其 top bottom
+    //             color: '#fc2222',//颜色
+    //             backgroundTransition: true,//背景转换 当用户按下复制按钮时，启用附加代码块的背景过渡动画
+    //             backgroundColor: '#f63d3d',//背景颜色
+    //             successText: '已复制到剪切板！',//复制成功时 提示信息
+    //             staticIcon: true // false 时 “复制图标” 鼠标悬停可见，true时始终可见
+    //         }
+    //     ]
+    // ],
+    // plugins: [
+    //     ['@vuepress-plugin-good-copycode',
+    //         {
+    //             copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
+    //             copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
+    //             duration: 300, // prompt message display time.
+    //             showInMobile: false, // whether to display on the mobile side, default: false.
+    //             copyTitle: "复制代码",
+    //             copyName: "复制"
+    //         }
+    //     ]
+    // ],
     theme: 'meteorlxy',
     themeConfig: {
         lang: 'zh-CN',
         personalInfo: {
             nickname: 'Aiden',
-            description: 'Aiden 一个00后带专前端CV工程师',
+            description: '一个00后带专前端CV工程师',
             email: '2496675826@qq.com',
             location: '郑州',
             avatar: '/image/avatar.jpg',
@@ -77,33 +102,20 @@ module.exports = {
             posts: true,
         },
         // 禁用评论功能
-        comments: false,
+        // comments: false,
+        comments: {
+            platform: 'github', // 可选，默认使用 'github'，还可以选择 'gitlab', 'bitbucket'。详情参考 Vssue 文档
+            owner: 'aidenwuwei',
+            repo: 'my-blog_vuepress',
+            clientId: '75168500f80982f42a54',
+            clientSecret: '3bc394459fdb3a85386cfc680a685fec12a6a71b',
+            autoCreateIssue: true, // 可选，这样设置可以在开发环境下不自动创建 Issue
+            prefix: '[Comments] ',
+            labels: ['comments']
+        },
     },
     // markdown配置
     markdown: {
         lineNumbers: true//代码显示行号
-    },
-    // 添加复制代码块功能 yarn add vuepress-plugin-code-copy
-    plugins: [['vuepress-plugin-code-copy', true]]
-    // plugins: [
-    //         ['vuepress-plugin-good-copycode', {
-    //         copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-    //         copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
-    //         duration: 300, // prompt message display time.
-    //         showInMobile: false, // whether to display on the mobile side, default: false.
-    //         copyTitle: "复制代码",
-    //         copyName: "复制"
-    //     }],
-    //     // ['vuepress-plugin-code-copy',
-    //     //     {
-    //     //         // selector: 'div[class*="language-"] pre',
-    //     //         // align: 'bottom', //对其 top bottom
-    //     //         color: '#fc2222',//颜色
-    //     //         backgroundTransition: true,//背景转换 当用户按下复制按钮时，启用附加代码块的背景过渡动画
-    //     //         backgroundColor: '#f63d3d',//背景颜色
-    //     //         successText: '已复制到剪切板！',//复制成功时 提示信息
-    //     //         staticIcon: true // false 时 “复制图标” 鼠标悬停可见，true时始终可见
-    //     //     }
-    //     // ]
-    // ]
+    }
 }
