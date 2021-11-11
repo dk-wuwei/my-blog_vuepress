@@ -1,7 +1,7 @@
 {
     "scripts": {
         "dev": "vuepress dev docs --no-cache --temp .temp --port 8088",
-        "build": "vuepress build docs --dest dist"
+        "build": "vuepress build docs --dest html"
     },
     "dependencies": {
         "vuepress": "^1.8.2",
