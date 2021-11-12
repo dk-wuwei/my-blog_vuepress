@@ -1,5 +1,5 @@
 module.exports = {
-    title: '如意如意随心所欲',
+    title: '如意如意随我心意',
     description: 'This is dkwuwei blog',
     locales: {
         '/': {
