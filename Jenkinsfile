@@ -1,30 +1,10 @@
----
-date: 2021-12-26
-title: 玩一玩 jenkins
-vssue-title: 玩一玩 jenkins
-category: 运维
-tags:
-- jenkins
----
-
-玩一玩 jenkins
-
-<!-- more -->
-
-## 判断node_modules文件是否存在
-
-```shell
 # 判断node_modules 是否存在 不存就下载依赖
 if [ ! -d "./node_modules" ]; then
 	echo "开始下载依赖"
 	npm install || error_exit "依赖下载失败"
 	echo "依赖下载成功"
 fi
-```
 
-## 加入文件对比
-
-```shell
 # 判断package.json文件有无改变，如果改变了需要执行npm install重新下载依赖
 # 目标文件变量
 package=./package.json
@@ -55,10 +35,17 @@ echo "$package_md5_new ----- $package_md5_old"
 
 # 对象对比判断
 if [ "$package_md5_new" != "$package_md5_old" ]; then
-    echo "文件发生了变化"
+    echo "文件发送了变化"
     createMd5
     echo "开始下载依赖"
     npm install || error_exit "依赖下载失败"
     echo "依赖下载成功"
 fi
-```
+
+echo "开始打包"
+npm run build
+
+echo "gzip压缩打包后的文件"
+tar -zcvf dist.tar.gz ./dist
+
+echo "success!"
