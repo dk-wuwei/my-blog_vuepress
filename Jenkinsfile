@@ -42,7 +42,7 @@ pipeline {
                sshPublisher(publishers: [sshPublisherDesc(configName: 'my-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /home/webserver/static/
                     tar -zxvf dist.tar.gz
                     rm -rf dist.tar.gz
-                    mv dist my-blog1''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/webserver/static/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'dist.tar.gz')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                    mv dist my-blog''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/webserver/static/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'dist.tar.gz')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
                 echo 'pubilsh success!!!'
             }
         }
